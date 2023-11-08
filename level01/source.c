@@ -8,13 +8,10 @@ int verify_user_name() {
     return strncmp("dat_wil", a_user_name, 7);
 }
 
-
 int verify_user_pass(char *password)
 {
   return strncmp("admin", password, 5);
 }
-
-
 
 int main(void)
 {

