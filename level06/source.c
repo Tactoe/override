@@ -29,7 +29,12 @@ int auth(char *login,uint serial)
         }
         
         // wrong hash
-        hash = hash + ((int)login[i] ^ hash) % 0x539;
+	int edx = 0x88233b2b;
+        temp = ((int)login[i] ^ hash);
+	int x = temp * edx;
+	x = (temp - edx) / 2) + edx;
+	x = (x / 1024) * 1337
+	hash = hash + (temp - x);
       }
       if (serial == hash) {
         return 0;
