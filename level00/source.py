@@ -2,9 +2,9 @@ import os
 import sys
 
 def main():
-    print ("***********************************");
-    print ("* \t     -Level00 -\t\t  *");
-    print ("***********************************");
+    print ("***********************************")
+    print ("* \t     -Level00 -\t\t  *")
+    print ("***********************************")
     password = input("Password:")
     if (int(password) == 5267):
         # get the effective group id and user id of the binary (in this case, the admin)

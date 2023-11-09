@@ -70,7 +70,7 @@ int main(int ac,char **av,char **env)
   envCopy = env;
   i = 0;
   memset(command, 0, 20);
-  memset(buffer, 0, 20);
+  memset(buffer, 0, 100);
   for (; *avCopy != (char *)0x0; **avCopy++) {
     memset(*avCopy, 0, strlen(*avCopy));
   }
@@ -84,7 +84,7 @@ int main(int ac,char **av,char **env)
     printf("Input command: ");
     i = 1;
     fgets(command,0x14,stdin);
-    command[strlen(&command) - 1] = '\0';
+    command[strlen(command) - 1] = '\0';
     if (strncmp(command, "store", 5)) {
       i = store_number(buffer);
     }
