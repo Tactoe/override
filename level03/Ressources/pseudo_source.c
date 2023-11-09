@@ -155,13 +155,13 @@ void test(int userInput,int leetDood)
     break;
   }
   return;
+}
 
 int main(void)
 
 {
   uint __seed;
   int password;
-  int local_10;
   
   __seed = time((time_t *)0x0);
   srand(__seed);
