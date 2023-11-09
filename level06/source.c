@@ -27,8 +27,6 @@ int auth(char *login,uint serial)
         if (login[i] < 32) {
           return 1;
         }
-        
-        // wrong hash
 	int edx = 0x88233b2b;
         temp = ((int)login[i] ^ hash);
 	int x = temp * edx;
